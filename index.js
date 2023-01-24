@@ -4,8 +4,8 @@ const Datastore = require("nedb");
 require("dotenv").config();
 
 const app = express();
-
-app.listen(4000, () => console.log("listening at port 4000"));
+const port = process.env.PORT || 4000;
+app.listen(port, () => console.log(`starting server at ${port}`));
 app.use(
   cors({
     origin: "http://localhost:3000",
