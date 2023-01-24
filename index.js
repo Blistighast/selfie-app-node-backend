@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const Datastore = require("nedb");
+require("dotenv").config();
 
 const app = express();
 
@@ -45,7 +46,7 @@ app.get("/weather/:latlon", async (req, res) => {
   const latlon = req.params.latlon.split(",");
   const lat = latlon[0];
   const lon = latlon[1];
-  const API_key = "2b374650b25cf8031252224458aff7db";
+  const API_key = process.env.API_KEY;
   const weather_url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}`;
   const airQuality_url = `https://api.openaq.org/v2/latest?coordinates=${lat},${lon}&radius=2500`;
   const weather_res = await fetch(weather_url);
