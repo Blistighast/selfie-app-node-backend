@@ -1,7 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const Datastore = require("nedb");
+const { default: fetch } = require("node-fetch");
 require("dotenv").config();
+// import express from "express";
+// import cors from "cors";
+// import Datastore from "nedb";
+// import fetch from "node-fetch";
+// import * as dotenv from "dotenv";
 
 const app = express();
 const port = process.env.PORT || 4000;
