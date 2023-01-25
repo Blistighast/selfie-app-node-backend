@@ -9,7 +9,8 @@ const port = process.env.PORT || 4000;
 app.listen(port, () => console.log(`starting server at ${port}`));
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://whereyouat.brianguterl.com",
+    // origin: "http://localhost:3000",
   })
 );
 
